@@ -9,6 +9,7 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}
+html{scroll-behavior:smooth;}
 body{background:#000;color:#fff;line-height:1.6;}
 
 /* NAV */
@@ -38,7 +39,7 @@ border:none;border-radius:6px;cursor:pointer;
 }
 
 /* SECTION */
-section{padding:90px 20px;text-align:center;}
+section{padding:100px 20px;text-align:center;}
 section h2{color:#f7ff00;margin-bottom:30px;}
 
 .card-container{display:flex;flex-wrap:wrap;justify-content:center;gap:25px;}
@@ -47,18 +48,17 @@ background:#111;padding:25px;width:260px;border-radius:12px;
 transition:0.3s;border:1px solid #222;
 }
 .card:hover{transform:translateY(-8px);box-shadow:0 0 20px #f7ff00;}
+
 .coach-img{
 width:160px;height:160px;object-fit:cover;border-radius:50%;
 border:4px solid #f7ff00;margin-bottom:15px;box-shadow:0 0 20px #f7ff00;
 }
 
-/* ABOUT */
 .about-text{max-width:900px;margin:auto;text-align:justify;}
 
-/* CONTACT */
 .contact-box{background:#111;padding:30px;border-radius:10px;display:inline-block;}
 
-/* MODAL FORM */
+/* FORM MODAL */
 .modal{
 display:none;position:fixed;z-index:3000;left:0;top:0;width:100%;height:100%;
 background:rgba(0,0,0,0.85);
@@ -75,6 +75,20 @@ width:100%;padding:10px;margin:8px 0;border:none;border-radius:5px;
 .submit-btn{
 width:100%;padding:12px;background:#f7ff00;border:none;
 font-weight:bold;border-radius:6px;cursor:pointer;margin-top:10px;
+}
+
+/* BACK TO TOP */
+.top-btn{
+position:fixed;
+bottom:30px;
+right:30px;
+background:#f7ff00;
+color:#000;
+padding:12px 15px;
+border-radius:50%;
+cursor:pointer;
+font-weight:bold;
+display:none;
 }
 
 footer{background:#111;padding:25px;text-align:center;font-size:14px;}
@@ -96,7 +110,7 @@ footer{background:#111;padding:25px;text-align:center;font-size:14px;}
 </div>
 </nav>
 
-<div class="hero">
+<div class="hero" id="home">
 <img src="logo.png">
 <h1>Akademi Futsal Profesional di Banjarbaru</h1>
 <p>Elite Futsal Development Program</p>
@@ -107,11 +121,32 @@ footer{background:#111;padding:25px;text-align:center;font-size:14px;}
 <h2>Tentang AL-FATIH Academy</h2>
 <div class="about-text">
 <p>
-AL-FATIH Academy adalah akademi futsal profesional yang berkomitmen membangun generasi pemain yang unggul secara teknik, kuat secara mental, dan berkarakter disiplin. Kami membina pemain usia dini hingga remaja dengan sistem latihan terarah dan profesional.
-</p>
-<p>
-Kami tidak hanya melatih keterampilan bermain futsal, tetapi juga menanamkan nilai kerja keras, tanggung jawab, dan mental juara untuk masa depan yang lebih baik.
-</p>
+        AL-FATIH Academy adalah akademi futsal yang berkomitmen penuh dalam membentuk generasi pemain
+        yang tidak hanya unggul secara teknik, tetapi juga kuat secara mental, disiplin dalam karakter,
+        dan siap menghadapi tantangan masa depan.
+        </p>
+
+        <p>
+        Kami percaya bahwa pemain hebat tidak lahir secara instan. Mereka dibentuk melalui proses,
+        konsistensi, kerja keras, dan lingkungan yang positif. Oleh karena itu, setiap program latihan
+        dirancang untuk mengembangkan kemampuan teknik dasar yang kuat, pemahaman taktik, kecerdasan bermain,
+        serta mental juara yang tangguh.
+        </p>
+
+        <p>
+        AL-FATIH Academy tidak hanya melatih cara bermain futsal, tetapi juga menanamkan nilai disiplin,
+        tanggung jawab, kepemimpinan, serta sikap sportif dalam setiap pertandingan.
+        Kami membangun karakter, membentuk mental pemenang, dan menyiapkan pemain untuk mampu bersaing
+        di tingkat daerah, nasional, hingga profesional.
+        </p>
+
+        <p>
+        Setiap pemain yang bergabung adalah investasi masa depan. Kami berkomitmen membangun hari ini
+        untuk kemenangan di masa depan.
+        </p>
+
+        <p><strong>AL-FATIH Academy – Membangun Hari Ini, Menang di Masa Depan.</strong></p>
+    </div>
 </div>
 </section>
 
@@ -119,7 +154,7 @@ Kami tidak hanya melatih keterampilan bermain futsal, tetapi juga menanamkan nil
 <h2>Program Latihan</h2>
 <div class="card-container">
 <div class="card"><h3>U8–U10</h3><p>Dasar teknik & koordinasi.</p></div>
-<div class="card"><h3>U12–U14</h3><p>Skill development & taktik.</p></div>
+<div class="card"><h3>U12–U14</h3><p>Pengembangan skill & taktik.</p></div>
 <div class="card"><h3>U16–U18</h3><p>Persiapan kompetisi & elite class.</p></div>
 </div>
 </section>
@@ -157,7 +192,9 @@ Banjarbaru, Kalimantan Selatan
 © 2026 AL-FATIH Academy | Elite Futsal Program
 </footer>
 
-<!-- FORM BIODATA -->
+<div id="topBtn" class="top-btn" onclick="scrollTop()">↑</div>
+
+<!-- FORM -->
 <div id="formModal" class="modal">
 <div class="modal-content">
 <span class="close" onclick="closeForm()">&times;</span>
@@ -165,8 +202,7 @@ Banjarbaru, Kalimantan Selatan
 <p style="text-align:center;">FOR AL FATIH FUTSAL ACADEMY</p>
 
 <select id="gender">
-<option>PUTRA</option>
-<option>PUTRI</option>
+<option>PUTRA</option><option>PUTRI</option>
 </select>
 
 <select id="umurGroup">
@@ -189,28 +225,24 @@ Banjarbaru, Kalimantan Selatan
 function openForm(){document.getElementById("formModal").style.display="block";}
 function closeForm(){document.getElementById("formModal").style.display="none";}
 function kirimWA(){
-let gender=document.getElementById("gender").value;
-let umurGroup=document.getElementById("umurGroup").value;
-let nama=document.getElementById("nama").value;
-let posisi=document.getElementById("posisi").value;
-let ttl=document.getElementById("ttl").value;
-let alamat=document.getElementById("alamat").value;
-let tinggi=document.getElementById("tinggi").value;
-let berat=document.getElementById("berat").value;
-
 let pesan=`BIODATA DIRI%0AFOR AL FATIH FUTSAL ACADEMY%0A%0A`
-+`Jenis: ${gender}%0A`
-+`Kelompok Umur: ${umurGroup}%0A`
-+`Nama: ${nama}%0A`
-+`Posisi: ${posisi}%0A`
-+`Tempat, Tgl Lahir: ${ttl}%0A`
-+`Alamat: ${alamat}%0A`
-+`Tinggi: ${tinggi} cm%0A`
-+`Berat: ${berat} kg%0A%0A`
++`Jenis: ${gender.value}%0A`
++`Kelompok Umur: ${umurGroup.value}%0A`
++`Nama: ${nama.value}%0A`
++`Posisi: ${posisi.value}%0A`
++`Tempat, Tgl Lahir: ${ttl.value}%0A`
++`Alamat: ${alamat.value}%0A`
++`Tinggi: ${tinggi.value} cm%0A`
++`Berat: ${berat.value} kg%0A%0A`
 +`SILAHKAN BERGABUNG ‼️`;
-
 window.open(`https://wa.me/6285705640674?text=${pesan}`,'_blank');
 }
+
+window.onscroll=function(){
+document.getElementById("topBtn").style.display=
+document.documentElement.scrollTop>200?"block":"none";
+};
+function scrollTop(){window.scrollTo({top:0,behavior:'smooth'});}
 </script>
 
 </body>
