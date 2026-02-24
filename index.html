@@ -16,6 +16,7 @@
 body{
     background:#000;
     color:#fff;
+    line-height:1.7;
 }
 
 /* NAVBAR */
@@ -62,7 +63,7 @@ nav a:hover{
 .hero{
     height:100vh;
     background:
-    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)),
     url('bg.jpg');
     background-size:cover;
     background-position:center;
@@ -118,6 +119,13 @@ section h2{
     font-size:32px;
 }
 
+/* ABOUT TEXT */
+.about-text{
+    max-width:900px;
+    margin:auto;
+    text-align:justify;
+}
+
 /* PROGRAM */
 .card-container{
     display:flex;
@@ -171,10 +179,9 @@ footer{
 
 <body>
 
-<!-- NAVBAR -->
 <nav>
     <div class="logo-nav">
-        <img src="logo.png" alt="Logo">
+        <img src="logo.png">
         <h2>AL-FATIH</h2>
     </div>
     <div>
@@ -185,38 +192,56 @@ footer{
     </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
-    <img src="logo.png" alt="Logo Besar">
+    <img src="logo.png">
     <h1>AL-FATIH ACADEMY</h1>
     <p>Elite Futsal Development Program</p>
     <a class="btn" href="https://wa.me/6285705640674">DAFTAR SEKARANG</a>
 </div>
 
-<!-- ABOUT -->
 <section id="about">
-    <h2>Tentang Kami</h2>
-    <p>
-        Akademi futsal profesional di Banjarbaru, Kalimantan Selatan.
-        Fokus pada pembinaan teknik, mental juara, dan karakter pemain muda.
-    </p>
+    <h2>Tentang AL-FATIH Academy</h2>
+    <div class="about-text">
+        <p>
+        AL-FATIH Academy adalah akademi futsal yang berkomitmen penuh dalam membentuk generasi pemain
+        yang tidak hanya unggul secara teknik, tetapi juga kuat secara mental, disiplin dalam karakter,
+        dan siap menghadapi tantangan masa depan.
+        </p>
+
+        <p>
+        Kami percaya bahwa pemain hebat tidak lahir secara instan. Mereka dibentuk melalui proses,
+        konsistensi, kerja keras, dan lingkungan yang positif. Oleh karena itu, setiap program latihan
+        dirancang untuk mengembangkan kemampuan teknik dasar yang kuat, pemahaman taktik, kecerdasan bermain,
+        serta mental juara yang tangguh.
+        </p>
+
+        <p>
+        AL-FATIH Academy tidak hanya melatih cara bermain futsal, tetapi juga menanamkan nilai disiplin,
+        tanggung jawab, kepemimpinan, serta sikap sportif dalam setiap pertandingan.
+        Kami membangun karakter, membentuk mental pemenang, dan menyiapkan pemain untuk mampu bersaing
+        di tingkat daerah, nasional, hingga profesional.
+        </p>
+
+        <p>
+        Setiap pemain yang bergabung adalah investasi masa depan. Kami berkomitmen membangun hari ini
+        untuk kemenangan di masa depan.
+        </p>
+
+        <p><strong>AL-FATIH Academy – Membangun Hari Ini, Menang di Masa Depan.</strong></p>
+    </div>
 </section>
 
-<!-- PROGRAM -->
 <section id="program">
     <h2>Program Latihan</h2>
-
     <div class="card-container">
         <div class="card">
             <h3>Usia 6–9 Tahun</h3>
             <p>Dasar teknik & koordinasi.</p>
         </div>
-
         <div class="card">
             <h3>Usia 10–13 Tahun</h3>
             <p>Skill development & game understanding.</p>
         </div>
-
         <div class="card">
             <h3>Elite Class</h3>
             <p>Persiapan kompetisi & mental juara.</p>
@@ -224,41 +249,32 @@ footer{
     </div>
 </section>
 
-<!-- COACH -->
 <section id="coach">
     <h2>Tim Pelatih</h2>
-
     <div class="card-container">
-
         <div class="card">
             <img src="coach.jpg" class="coach-img">
             <h3>Bintang Surya</h3>
             <p>Head Coach</p>
         </div>
-
         <div class="card">
             <img src="gkcoach.jpg" class="coach-img">
             <h3>Agus Budi</h3>
             <p>Goalkeeper Coach</p>
         </div>
-
         <div class="card">
             <img src="assistant.jpg" class="coach-img">
             <h3>Fajar Mahakam</h3>
             <p>Assistant Coach</p>
         </div>
-
     </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
     <h2>Kontak</h2>
     <div class="contact-box">
-        <p>
-            WhatsApp: 0857-0564-0674 <br><br>
-            Banjarbaru, Kalimantan Selatan
-        </p>
+        WhatsApp: 0857-0564-0674 <br><br>
+        Banjarbaru, Kalimantan Selatan
     </div>
 </section>
 
