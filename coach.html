@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Profil Bintang Surya | AL-FATIH Academy</title>
+<title>Bintang Surya | Head Coach AL-FATIH Academy</title>
 
 <style>
 body{
@@ -11,25 +11,27 @@ body{
     font-family:Arial, Helvetica, sans-serif;
     background:#000;
     color:#fff;
+    line-height:1.7;
 }
 
 /* HERO */
 .hero{
-    background:linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
-    url('bg.jpg');
+    background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)),
+    url('bg-coach.jpg');
     background-size:cover;
     background-position:center;
-    padding:120px 20px 60px;
+    padding:120px 20px 80px;
     text-align:center;
 }
 
 .hero img{
-    width:180px;
-    height:180px;
+    width:200px;
+    height:200px;
     object-fit:cover;
     border-radius:50%;
     border:5px solid #f7ff00;
-    box-shadow:0 0 25px #f7ff00;
+    box-shadow:0 0 35px #f7ff00;
     animation:slideDown 1s ease;
 }
 
@@ -46,8 +48,8 @@ body{
 /* TIMELINE */
 .timeline{
     position:relative;
-    max-width:800px;
-    margin:60px auto;
+    max-width:900px;
+    margin:80px auto;
     padding:0 20px;
 }
 
@@ -68,31 +70,64 @@ body{
     width:50%;
 }
 
-.container.left{
-    left:0;
-}
-
-.container.right{
-    left:50%;
-}
+.container.left{ left:0; }
+.container.right{ left:50%; }
 
 .content{
     background:#111;
     padding:20px;
-    border-radius:8px;
-    box-shadow:0 0 15px rgba(247,255,0,0.4);
+    border-radius:10px;
+    box-shadow:0 0 20px rgba(247,255,0,0.4);
     animation:slideUp 1s ease;
 }
 
-.container.left .content{
-    text-align:right;
+.container.left .content{ text-align:right; }
+.container.right .content{ text-align:left; }
+
+/* SLIDER */
+.slider{
+    position:relative;
+    max-width:800px;
+    margin:100px auto 60px;
 }
 
-.container.right .content{
-    text-align:left;
+.slide{
+    display:none;
+    width:100%;
+    border-radius:12px;
+    box-shadow:0 0 25px rgba(247,255,0,0.6);
 }
 
-/* ANIMATIONS */
+.slide.active{ display:block; }
+
+.prev, .next{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:#f7ff00;
+    border:none;
+    padding:10px 15px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.prev{ left:10px; }
+.next{ right:10px; }
+
+/* BUTTON */
+.back{
+    display:block;
+    text-align:center;
+    margin:40px auto;
+    text-decoration:none;
+    color:#000;
+    background:#f7ff00;
+    padding:12px 25px;
+    border-radius:6px;
+    width:200px;
+}
+
+/* ANIMATION */
 @keyframes slideDown{
     from{transform:translateY(-50px); opacity:0;}
     to{transform:translateY(0); opacity:1;}
@@ -108,19 +143,22 @@ body{
     to{opacity:1;}
 }
 
-/* BACK BUTTON */
-.back{
-    display:block;
-    text-align:center;
-    margin:40px;
-    text-decoration:none;
-    color:#000;
-    background:#f7ff00;
-    padding:10px 25px;
-    border-radius:6px;
-    width:150px;
-    margin-left:auto;
-    margin-right:auto;
+/* RESPONSIVE */
+@media screen and (max-width:768px){
+.timeline::after{ left:20px; }
+
+.container{
+    width:100%;
+    padding-left:60px;
+    padding-right:25px;
+}
+
+.container.right{ left:0; }
+
+.container.left .content,
+.container.right .content{
+    text-align:left;
+}
 }
 </style>
 </head>
@@ -133,6 +171,7 @@ body{
     <p>Head Coach AL-FATIH Academy</p>
 </div>
 
+<!-- TIMELINE PRESTASI -->
 <div class="timeline">
 
     <div class="container left">
@@ -158,42 +197,86 @@ body{
 
     <div class="container right">
         <div class="content">
+            <h3>GHOTOPIA CUP Jepang U15</h3>
+            <p>Juara 1</p>
+        </div>
+    </div>
+
+    <div class="container left">
+        <div class="content">
             <h3>PSS Sleman U16</h3>
             <p>1 Tahun</p>
         </div>
     </div>
 
-    <div class="container left">
+    <div class="container right">
         <div class="content">
             <h3>EPA Barito Putera</h3>
-            <p>U16 Juara 3 • U18 Juara 3 • U20 Juara 2</p>
-        </div>
-    </div>
-
-    <div class="container right">
-        <div class="content">
-            <h3>Promosi Senior</h3>
-            <p>Barito Putera (2 Tahun)</p>
+            <p>
+                U16 Juara 3<br>
+                U18 Juara 3<br>
+                U20 Juara 2
+            </p>
         </div>
     </div>
 
     <div class="container left">
         <div class="content">
-            <h3>PORPROV</h3>
-            <p>Juara 2 Sepakbola</p>
+            <h3>Promosi Senior Barito Putera</h3>
+            <p>2 Tahun</p>
         </div>
     </div>
 
     <div class="container right">
         <div class="content">
-            <h3>Liga 3</h3>
-            <p>Juara Regional Kalimantan Selatan (Persetala)</p>
+            <h3>PORPROV Sepakbola</h3>
+            <p>Juara 2</p>
+        </div>
+    </div>
+
+    <div class="container left">
+        <div class="content">
+            <h3>Liga 3 Regional Kalimantan Selatan</h3>
+            <p>Juara 1 (Persetala)</p>
         </div>
     </div>
 
 </div>
 
-<a href="index.html" class="back">Kembali</a>
+<!-- GALERI FOTO -->
+<h2 style="text-align:center; color:#f7ff00;">Galeri Karier</h2>
+
+<div class="slider">
+    <button class="prev" onclick="moveSlide(-1)">❮</button>
+
+    <img src="coach1.jpg" class="slide active">
+    <img src="coach2.jpg" class="slide">
+    <img src="coach3.jpg" class="slide">
+    <img src="coach4.jpg" class="slide">
+
+    <button class="next" onclick="moveSlide(1)">❯</button>
+</div>
+
+<a href="index.html" class="back">Kembali ke Beranda</a>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
+
+function showSlide(index){
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[index].classList.add("active");
+}
+
+function moveSlide(step){
+    currentSlide += step;
+    if(currentSlide >= slides.length) currentSlide = 0;
+    if(currentSlide < 0) currentSlide = slides.length - 1;
+    showSlide(currentSlide);
+}
+
+showSlide(currentSlide);
+</script>
 
 </body>
 </html>
