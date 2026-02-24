@@ -3,94 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AL-FATIH Academy | Elite Futsal Development</title>
+<title>AL-FATIH Academy | Pendaftaran</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
 body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
     background:#000;
     color:#fff;
-    line-height:1.7;
-}
-
-/* NAVBAR */
-nav{
-    position:fixed;
-    width:100%;
-    background:rgba(0,0,0,0.85);
-    backdrop-filter: blur(6px);
-    padding:15px 40px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    z-index:1000;
-}
-
-.logo-nav{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.logo-nav img{
-    width:45px;
-    filter:drop-shadow(0 0 10px #f7ff00);
-}
-
-.logo-nav h2{
-    color:#f7ff00;
-}
-
-nav a{
-    color:#fff;
-    text-decoration:none;
-    margin-left:20px;
-    font-size:14px;
-    transition:0.3s;
-}
-
-nav a:hover{
-    color:#f7ff00;
+    text-align:center;
 }
 
 /* HERO */
 .hero{
     height:100vh;
-    background:
-    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)),
-    url('bg.jpg');
-    background-size:cover;
-    background-position:center;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    text-align:center;
-    padding:20px;
+    background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+    url('bg.jpg');
+    background-size:cover;
+    background-position:center;
 }
 
-.hero img{
-    width:140px;
-    margin-bottom:20px;
-    filter:drop-shadow(0 0 20px #f7ff00);
-}
-
-.hero h1{
-    font-size:55px;
+h1{
     color:#f7ff00;
-    text-shadow:0 0 20px #f7ff00;
-    margin-bottom:15px;
-}
-
-.hero p{
-    font-size:20px;
-    margin-bottom:30px;
+    font-size:45px;
 }
 
 .btn{
@@ -98,191 +37,159 @@ nav a:hover{
     background:#f7ff00;
     color:#000;
     font-weight:bold;
-    text-decoration:none;
+    border:none;
     border-radius:6px;
-    transition:0.3s;
+    cursor:pointer;
+    margin-top:20px;
 }
 
-.btn:hover{
-    background:#fff;
+/* MODAL */
+.modal{
+    display:none;
+    position:fixed;
+    z-index:3000;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.85);
 }
 
-/* SECTION */
-section{
-    padding:90px 20px;
-    text-align:center;
-}
-
-section h2{
-    color:#f7ff00;
-    margin-bottom:30px;
-    font-size:32px;
-}
-
-/* ABOUT TEXT */
-.about-text{
-    max-width:900px;
-    margin:auto;
-    text-align:justify;
-}
-
-/* PROGRAM */
-.card-container{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:25px;
-}
-
-.card{
+.modal-content{
     background:#111;
-    padding:25px;
-    width:260px;
-    border-radius:12px;
-    transition:0.3s;
-    border:1px solid #222;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 0 20px #f7ff00;
-}
-
-/* COACH */
-.coach-img{
-    width:170px;
-    height:170px;
-    object-fit:cover;
-    border-radius:50%;
-    border:4px solid #f7ff00;
-    margin-bottom:15px;
-    box-shadow:0 0 20px #f7ff00;
-}
-
-/* CONTACT */
-.contact-box{
-    background:#111;
+    margin:5% auto;
     padding:30px;
+    width:95%;
+    max-width:500px;
     border-radius:10px;
-    display:inline-block;
+    box-shadow:0 0 30px #f7ff00;
+    text-align:left;
 }
 
-/* FOOTER */
-footer{
-    background:#111;
-    padding:25px;
+.modal-content h2{
     text-align:center;
-    font-size:14px;
+    color:#f7ff00;
+}
+
+.modal-content input,
+.modal-content select{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border:none;
+    border-radius:5px;
+}
+
+.close{
+    float:right;
+    font-size:22px;
+    cursor:pointer;
+    color:#f7ff00;
+}
+
+.submit-btn{
+    width:100%;
+    padding:12px;
+    background:#f7ff00;
+    border:none;
+    font-weight:bold;
+    border-radius:6px;
+    cursor:pointer;
+    margin-top:10px;
 }
 </style>
-   
 </head>
 
 <body>
 
-<nav>
-    <div class="logo-nav">
-        <img src="logo.png">
-        <h2>AL-FATIH</h2>
-    </div>
-    <div>
-        <a href="#about">Tentang</a>
-        <a href="#program">Program</a>
-        <a href="#coach">Pelatih</a>
-        <a href="#contact">Kontak</a>
-    </div>
-</nav>
-
 <div class="hero">
-    <img src="logo.png">
-    <h1>AL-FATIH ACADEMY</h1>
-    <p>Elite Futsal Development Program</p>
-    <a class="btn" href="https://wa.me/6285705640674">DAFTAR SEKARANG</a>
+    <h1>AL-FATIH FUTSAL ACADEMY</h1>
+    <p>SILAHKAN BERGABUNG ‼️</p>
+    <button class="btn" onclick="openForm()">DAFTAR SEKARANG</button>
 </div>
 
-<section id="about">
-    <h2>Tentang AL-FATIH Academy</h2>
-    <div class="about-text">
-        <p>
-        AL-FATIH Academy adalah akademi futsal yang berkomitmen penuh dalam membentuk generasi pemain
-        yang tidak hanya unggul secara teknik, tetapi juga kuat secara mental, disiplin dalam karakter,
-        dan siap menghadapi tantangan masa depan.
-        </p>
+<!-- FORM -->
+<div id="formModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeForm()">&times;</span>
 
-        <p>
-        Kami percaya bahwa pemain hebat tidak lahir secara instan. Mereka dibentuk melalui proses,
-        konsistensi, kerja keras, dan lingkungan yang positif. Oleh karena itu, setiap program latihan
-        dirancang untuk mengembangkan kemampuan teknik dasar yang kuat, pemahaman taktik, kecerdasan bermain,
-        serta mental juara yang tangguh.
-        </p>
+    <h2>BIODATA DIRI</h2>
+    <p style="text-align:center;">FOR AL FATIH FUTSAL ACADEMY</p>
 
-        <p>
-        AL-FATIH Academy tidak hanya melatih cara bermain futsal, tetapi juga menanamkan nilai disiplin,
-        tanggung jawab, kepemimpinan, serta sikap sportif dalam setiap pertandingan.
-        Kami membangun karakter, membentuk mental pemenang, dan menyiapkan pemain untuk mampu bersaing
-        di tingkat daerah, nasional, hingga profesional.
-        </p>
+    <label>Jenis Kelamin</label>
+    <select id="gender">
+        <option>PUTRA</option>
+        <option>PUTRI</option>
+    </select>
 
-        <p>
-        Setiap pemain yang bergabung adalah investasi masa depan. Kami berkomitmen membangun hari ini
-        untuk kemenangan di masa depan.
-        </p>
+    <label>Kelompok Umur</label>
+    <select id="umurGroup">
+        <option>U8</option>
+        <option>U10</option>
+        <option>U12</option>
+        <option>U14</option>
+        <option>U16</option>
+        <option>U18</option>
+    </select>
 
-        <p><strong>AL-FATIH Academy – Membangun Hari Ini, Menang di Masa Depan.</strong></p>
-    </div>
-</section>
+    <label>Nama</label>
+    <input type="text" id="nama">
 
-<section id="program">
-    <h2>Program Latihan</h2>
-    <div class="card-container">
-        <div class="card">
-            <h3>Usia 6–9 Tahun</h3>
-            <p>Dasar teknik & koordinasi.</p>
-        </div>
-        <div class="card">
-            <h3>Usia 10–13 Tahun</h3>
-            <p>Skill development & game understanding.</p>
-        </div>
-        <div class="card">
-            <h3>Elite Class</h3>
-            <p>Persiapan kompetisi & mental juara.</p>
-        </div>
-    </div>
-</section>
+    <label>Posisi</label>
+    <input type="text" id="posisi">
 
-<section id="coach">
-    <h2>Tim Pelatih</h2>
-    <div class="card-container">
-        <div class="card">
-    <img src="coach.jpg" class="coach-img">
-    <h3>Bintang Surya</h3>
-    <p>Head Coach</p>
-    <a href="coach.html" class="btn-small">Lihat Profil</a>
+    <label>Tempat, Tanggal Lahir</label>
+    <input type="text" id="ttl">
+
+    <label>Alamat</label>
+    <input type="text" id="alamat">
+
+    <label>Tinggi Badan (cm)</label>
+    <input type="number" id="tinggi">
+
+    <label>Berat Badan (kg)</label>
+    <input type="number" id="berat">
+
+    <button class="submit-btn" onclick="kirimWA()">KIRIM KE WHATSAPP</button>
+
+  </div>
 </div>
-        <div class="card">
-            <img src="gkcoach.jpg" class="coach-img">
-            <h3>Agus Budi</h3>
-            <p>Goalkeeper Coach</p>
-        </div>
-        <div class="card">
-            <img src="assistant.jpg" class="coach-img">
-            <h3>Fajar Mahakam</h3>
-            <p>Assistant Coach</p>
-        </div>
-    </div>
-</section>
 
-<section id="contact">
-    <h2>Kontak</h2>
-    <div class="contact-box">
-        WhatsApp: 0857-0564-0674 <br><br>
-        Banjarbaru, Kalimantan Selatan
-    </div>
-</section>
+<script>
+function openForm(){
+    document.getElementById("formModal").style.display="block";
+}
 
-<footer>
-    © 2026 AL-FATIH Academy | Elite Futsal Program
-</footer>
+function closeForm(){
+    document.getElementById("formModal").style.display="none";
+}
+
+function kirimWA(){
+    let gender = document.getElementById("gender").value;
+    let umurGroup = document.getElementById("umurGroup").value;
+    let nama = document.getElementById("nama").value;
+    let posisi = document.getElementById("posisi").value;
+    let ttl = document.getElementById("ttl").value;
+    let alamat = document.getElementById("alamat").value;
+    let tinggi = document.getElementById("tinggi").value;
+    let berat = document.getElementById("berat").value;
+
+    let pesan = 
+    `BIODATA DIRI%0A` +
+    `FOR AL FATIH FUTSAL ACADEMY%0A%0A` +
+    `Jenis: ${gender}%0A` +
+    `Kelompok Umur: ${umurGroup}%0A` +
+    `Nama: ${nama}%0A` +
+    `Posisi: ${posisi}%0A` +
+    `Tempat, Tgl Lahir: ${ttl}%0A` +
+    `Alamat: ${alamat}%0A` +
+    `Tinggi Badan: ${tinggi} cm%0A` +
+    `Berat Badan: ${berat} kg%0A%0A` +
+    `SILAHKAN BERGABUNG ‼️`;
+
+    window.open(`https://wa.me/6285705640674?text=${pesan}`, '_blank');
+}
+</script>
 
 </body>
 </html>
