@@ -94,7 +94,7 @@ let nomorFoto = index + 1;
 let card = document.createElement("div");
 card.className = "player-card";
 card.innerHTML = `
-<img src="${nomorFoto}.jpg" onerror="this.src='default.jpg'">
+<img src="${nomorFoto}.jpeg" onerror="this.src='default.jpeg'">
 <h3>${player.nama}</h3>
 <p>${player.umur}</p>
 `;
@@ -117,8 +117,8 @@ container.appendChild(card);
 
 function openModal(p, nomorFoto){
 document.getElementById("modalContent").innerHTML = `
-<img src="${nomorFoto}.jpg"
-onerror="this.src='default.jpg'"
+<img src="${nomorFoto}.jpeg"
+onerror="this.src='default.jpeg'"
 style="width:150px;height:150px;border-radius:50%;border:3px solid #f7ff00;"><br><br>
 <h2 style="color:#f7ff00;">${p.nama}</h2>
 <p>
