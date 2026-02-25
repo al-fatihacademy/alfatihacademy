@@ -6,58 +6,17 @@
 <title>Biodata Pemain | AL-FATIH Academy</title>
 
 <style>
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#000;
-color:#fff;
-}
-
-nav{
-background:#111;
-padding:15px 40px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-nav h2{color:#f7ff00;}
-nav a{color:#fff;text-decoration:none;}
-nav a:hover{color:#f7ff00;}
-
-h1{
-text-align:center;
-color:#f7ff00;
-margin:40px 0;
-}
-
-.search-box{
-text-align:center;
-margin-bottom:30px;
-}
-
-.search-box input{
-padding:10px;
-width:300px;
-border-radius:5px;
-border:none;
-}
+body{margin:0;font-family:Arial;background:#000;color:#fff;}
+h1{text-align:center;color:#f7ff00;margin:40px 0;}
 
 .player-container{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:25px;
-padding:20px;
+display:flex;flex-wrap:wrap;justify-content:center;
+gap:25px;padding:20px;
 }
 
 .player-card{
-background:#111;
-width:260px;
-border-radius:12px;
-padding:20px;
-text-align:center;
-cursor:pointer;
+background:#111;width:260px;border-radius:12px;
+padding:20px;text-align:center;cursor:pointer;
 transition:0.3s;
 }
 
@@ -67,75 +26,30 @@ box-shadow:0 0 20px #f7ff00;
 }
 
 .player-card img{
-width:120px;
-height:120px;
-object-fit:cover;
-border-radius:50%;
-border:3px solid #f7ff00;
+width:120px;height:120px;object-fit:cover;
+border-radius:50%;border:3px solid #f7ff00;
 margin-bottom:15px;
 }
 
-.player-card h3{
-color:#f7ff00;
-font-size:16px;
-}
-
-/* MODAL */
 .modal{
-display:none;
-position:fixed;
-z-index:5000;
-left:0;top:0;
-width:100%;height:100%;
+display:none;position:fixed;z-index:5000;
+left:0;top:0;width:100%;height:100%;
 background:rgba(0,0,0,0.9);
 }
 
 .modal-content{
-background:#111;
-margin:5% auto;
-padding:30px;
-width:90%;
-max-width:500px;
-border-radius:10px;
-box-shadow:0 0 25px #f7ff00;
-text-align:center;
+background:#111;margin:5% auto;padding:30px;
+width:90%;max-width:500px;border-radius:10px;
+box-shadow:0 0 25px #f7ff00;text-align:center;
 }
 
-.close{
-float:right;
-font-size:24px;
-cursor:pointer;
-color:#f7ff00;
-}
-
-.back-home{
-display:block;
-width:200px;
-margin:50px auto;
-text-align:center;
-padding:12px;
-background:#f7ff00;
-color:#000;
-text-decoration:none;
-font-weight:bold;
-border-radius:6px;
-}
+.close{float:right;font-size:24px;cursor:pointer;color:#f7ff00;}
 </style>
 </head>
 
 <body>
 
-<nav>
-<h2>AL-FATIH</h2>
-<a href="index.html">Beranda</a>
-</nav>
-
 <h1>BIODATA PEMAIN AL-FATIH ACADEMY</h1>
-
-<div class="search-box">
-<input type="text" id="searchInput" placeholder="Cari Nama Pemain..." onkeyup="filterPlayer()">
-</div>
-
 <div class="player-container" id="playerList"></div>
 
 <div id="playerModal" class="modal">
@@ -145,91 +59,35 @@ border-radius:6px;
 </div>
 </div>
 
-<a href="index.html" class="back-home">← Kembali ke Beranda</a>
-
 <script>
 
-// ======================
-// MASUKKAN SEMUA DATA SISWA DI SINI
-// ======================
+// =====================
+// BACA FILE CSV
+// =====================
 
-const players = [
+fetch("data-siswa.csv")
+.then(response => response.text())
+.then(data => {
 
-{
-nama:"Ahmad Adzkiro Roshidi",
-lp:"PUTRA",
-umur:"U14",
-ttl:"Banjarbaru, 11 Agustus 2011",
-alamat:"Cempaka Hulu",
-tinggi:"148",
-berat:"37",
-posisi:"Flank"
-},
-
-{
-nama:"Ahmad Fauzi",
-lp:"PUTRA",
-umur:"U18",
-ttl:"Cempaka, 3 Juli 2009",
-alamat:"Cahaya Idaman",
-tinggi:"166",
-berat:"50",
-posisi:"-"
-},
-
-{
-nama:"Ahmad Gidma Baqhia",
-lp:"PUTRA",
-umur:"U18",
-ttl:"Martapura, 21 Desember 2007",
-alamat:"Cempaka",
-tinggi:"159",
-berat:"-",
-posisi:"Gelandang"
-},
-
-{
-nama:"Ahmad Yani",
-lp:"PUTRA",
-umur:"U18",
-ttl:"Sungai Batang Ilir, 19 September 2008",
-alamat:"Jl. Martapura Lama",
-tinggi:"177",
-berat:"55",
-posisi:"Anchor"
-},
-
-{
-nama:"Ahmad Zaini",
-lp:"PUTRA",
-umur:"U14",
-ttl:"Karang Intan, 6 Juni 2011",
-alamat:"Mali-mali",
-tinggi:"160",
-berat:"40",
-posisi:"Flank"
-},
-
-{
-nama:"Denova",
-lp:"PUTRI",
-umur:"U16",
-ttl:"Martapura, 13 November 2010",
-alamat:"Jl. Mufakat",
-tinggi:"154",
-berat:"75",
-posisi:"Flank"
-}
-
-];
-
-// ======================
-// GENERATE CARD OTOMATIS
-// ======================
-
+const rows = data.split("\n").slice(1); // skip header
 const container = document.getElementById("playerList");
 
-players.forEach((p, index) => {
+rows.forEach((row, index) => {
+
+if(row.trim() !== ""){
+
+const cols = row.split(",");
+
+const player = {
+nama: cols[0],
+lp: cols[1],
+umur: cols[2],
+ttl: cols[3],
+alamat: cols[4],
+tinggi: cols[5],
+berat: cols[6],
+posisi: cols[7]
+};
 
 let nomorFoto = index + 1;
 
@@ -237,27 +95,31 @@ let card = document.createElement("div");
 card.className = "player-card";
 card.innerHTML = `
 <img src="${nomorFoto}.jpg" onerror="this.src='default.jpg'">
-<h3>${p.nama}</h3>
-<p>${p.umur}</p>
+<h3>${player.nama}</h3>
+<p>${player.umur}</p>
 `;
 
 card.onclick = function(){
-openModal(p, nomorFoto);
+openModal(player, nomorFoto);
 };
 
 container.appendChild(card);
+
+}
+
 });
 
-// ======================
-// POPUP DETAIL
-// ======================
+});
+
+// =====================
+// MODAL DETAIL
+// =====================
 
 function openModal(p, nomorFoto){
 document.getElementById("modalContent").innerHTML = `
 <img src="${nomorFoto}.jpg"
 onerror="this.src='default.jpg'"
 style="width:150px;height:150px;border-radius:50%;border:3px solid #f7ff00;"><br><br>
-
 <h2 style="color:#f7ff00;">${p.nama}</h2>
 <p>
 Jenis Kelamin: ${p.lp}<br>
@@ -274,20 +136,6 @@ document.getElementById("playerModal").style.display="block";
 
 function closeModal(){
 document.getElementById("playerModal").style.display="none";
-}
-
-// ======================
-// SEARCH
-// ======================
-
-function filterPlayer(){
-let input = document.getElementById("searchInput").value.toLowerCase();
-let cards = document.querySelectorAll(".player-card");
-
-cards.forEach(card=>{
-let name = card.querySelector("h3").innerText.toLowerCase();
-card.style.display = name.includes(input) ? "block" : "none";
-});
 }
 
 </script>
